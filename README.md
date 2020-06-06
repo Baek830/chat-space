@@ -26,8 +26,7 @@ Things you may want to cover:
 ## groups table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|user_id|integer|null: false, unique: true|
+|name|string|null: false, unique: true|
 ### Association
 - has_many :users_groups
 - has_many :users, through:  :users_groups
