@@ -1,0 +1,37 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box--group-name
+        test
+      .main-header__left-box--group-member
+        %ul.main-header__left-box--group-member__list
+          Member :
+          %li.main-header__left-box--group-member__list-name
+            name
+    .main-header__edit-btn
+      = link_to "#" do
+        Edit
+  .messages
+    .message
+      .message-top
+        .message-top__sender
+          name
+        .message-top__date
+          2020/06/05(Mon) 19:00
+      .message-text
+        text
+    .message
+      .message-top
+        .message-top__sender
+          name
+        .message-top__date
+          2020/06/05(Mon) 19:00
+      .message-text
+        text
+  .form
+    .new-message
+      %input.new-message__form{:name => "text", :placeholder => "type a message"}
+      %label{class: "new-message__form--label"}
+        =icon('far','image', class: "new-message__form--picture-send-btn")
+        %input{type: "file", class: "new-message__form--file-choose"}
+    %input{type: "submit", class: 'send-btn', value: "Send"}
