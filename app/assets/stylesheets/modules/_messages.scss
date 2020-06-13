@@ -6,6 +6,11 @@
   display: flex;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .side-bar {
   width: 300px;
   height: 100vh;
@@ -26,9 +31,8 @@
       &--menu {
         display: flex;
         a {
-          text-decoration: none;
-          color: #ffffff;
           padding-left: 5px;
+          font-size: 1.2em;
         }
       }
     }
@@ -37,10 +41,8 @@
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     &__box {
-      height: 91px;
+      height: 85px;
       color: #ffffff;
-      font-weight: bold;
-      margin-bottom: 40px;
       &--group-name {
         padding-top: 20px;
         margin: 0 20px;
