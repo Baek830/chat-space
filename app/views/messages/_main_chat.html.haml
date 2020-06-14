@@ -2,36 +2,24 @@
   .main-header
     .main-header__left-box
       .main-header__left-box--group-name
-        test
+        = @group.name
       .main-header__left-box--group-member
-        %ul.main-header__left-box--group-member__list
+        .main-header__left-box--group-member__list
           Member :
-          %li.main-header__left-box--group-member__list-name
-            name
+          %ul.main-header__left-box--group-member__list-name
+            - @group.users.each do |user|
+              %li= user.name
     .main-header__edit-btn
-      = link_to "#" do
+      = link_to edit_group_path(@group.id) do
         Edit
   .messages
-    .message
-      .message-top
-        .message-top__sender
-          name
-        .message-top__date
-          2020/06/05(Mon) 19:00
-      .message-text
-        text
-    .message
-      .message-top
-        .message-top__sender
-          name
-        .message-top__date
-          2020/06/05(Mon) 19:00
-      .message-text
-        text
+    = render @messages
   .form
-    .new-message
-      %input.new-message__form{:name => "text", :placeholder => "type a message"}
-      %label{class: "new-message__form--label"}
-        =icon('far','image', class: "new-message__form--picture-send-btn")
-        %input{type: "file", class: "new-message__form--file-choose"}
-    %input{type: "submit", class: 'send-btn', value: "Send"}
+    .new_message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'new_message--form', placeholder: 'type a message'
+        .new_message--mask
+          = f.label :image, class: 'new_message--mask' do
+            = icon('far','image', class: 'new_message--mask--picture-send-btn')
+            = f.file_field :image, class: 'new_message--mask--file-choose'
+        = f.submit 'Send', class: 'send-btn'
