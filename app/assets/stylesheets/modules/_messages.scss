@@ -116,10 +116,11 @@ a {
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 35px 40px;
+    overflow: scroll;
     .message {
-      height: 98px;
-      width: auto;
-      padding-bottom: 46px;
+      height: 150px;
+      // width: 100%;
+      // margin-bottom: 30px;
       .message-top {
         display: flex;
         &__sender {
@@ -137,7 +138,14 @@ a {
         margin-top: 12px;
         color: #434a54;
         font-size: 14px;
+        // line-height: 120px;
+        .message-text__content {
+          // height: 120px;
+          display: block;
+          text-align: center;
+          }
       }
+      
     }
   }
   .form {
